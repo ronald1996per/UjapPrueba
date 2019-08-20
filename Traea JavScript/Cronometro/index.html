@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cronometro</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="css/cronometro.css" rel="stylesheet" type="text/css"/>
+    
+</head>
+<body>
+    
+
+        <div id="" class="" style="margin-left:35%;margin-top:30px;">
+                <div class="Marco">
+                        <div class="reloj-container">
+                                <div class="Botones">
+                                        <div class="reloj hidden" id="Horas">00</div>
+                                                
+                                        <div class="reloj" id="Minutos">:00</div>
+                                                
+                                        <div class="reloj" id="Segundos">:00</div>
+                                                
+                                        <div class="reloj" id="Centesimas">:00</div>
+                                </div>
+        
+                        </div>
+                </div>
+        
+                <br>
+                <div>
+                        <input type="button" class="btn btn-success" id="inicio" value="Start &#9658;" onclick="inicio();">
+                        <input type="button" class="btn btn-danger" id="parar" value="Stop &#8718;" onclick="parar();" disabled>
+                        <input type="button" class=" btn btn-primary" id="continuar" value="Reanudar &#8634;"
+                                onclick="inicio();" disabled>
+                        <input type="button" class=" btn btn-default" id="reinicio" value="Reset &#8635;" onclick="reinicio();"
+                                disabled>
+
+                </div>
+                <div style="margin-left:100px;"><strong id="parado"></strong></div>
+        </div>
+
+        <script src="Js/jquery-3.3.1.js"></script>
+        <script src="Js/bootstrap.js"></script>
+        <script src="Js/cronometro.js"></script>
+</body>
+</html>

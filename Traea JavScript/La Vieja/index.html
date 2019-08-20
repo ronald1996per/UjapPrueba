@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> La Vieja </title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+    <div class="container ">
+        <div class="row">
+                <div class="col-lg-5"></div>
+                <div class="col-lg-5">
+                    <h1>La Vieja</h1>
+                </div>
+        </div>
+    </div>
+  
+    <div class="container ">
+           <div>
+               <div class="juegoTT">
+                    <div class="btn btn-primary" id="jugar" onclick="GetName(this);">Jugar</div>
+               </div>
+              
+
+               <div class="" style="display:none;" id="jugadores">
+                   <div class="row" style="margin-bottom:10px;">
+                       <div class="col-lg-6"> 
+                           <div style="display:flex;">
+                                <p><strong>Jugando....</strong></p>
+                                <div class="btn btn-danger" id="Reset" onclick="ResetBtn(this);" style="margin-left:10px;">Iniciar Otra vez !</div>
+                           </div>
+                       
+                        </div>
+                        <div class="col-lg-6"> 
+                                <div style="display:block;">
+                                     <p><strong> Ronda : </strong></p>
+                                     <input type="button" class="btn btn-default" id="ronda" value="1" style="margin-left:15px;"/>
+                                </div>
+                            
+                        </div>
+                    </div>
+                   <div class="row">
+                       <div class="col-lg-2">
+                           <label  style="margin-top: 26px;">Jugar 1 (X) : </label>
+                        </div>
+                        <div class="col-lg-3">
+                             
+                                <input class="form-control" readonly value="" style="margin-top: 26px;" id="NameJugador1"/>
+                        </div>
+                        <div class="col-lg-1">
+                                <label>Ganadas</label>
+                                <input type="button" class="form-control btn btn-success" value="0" id="ganadas1"/>
+                        </div>
+                        <div class="col-lg-1">
+                                <label>Perdidas</label>
+                                <input type="button" class="form-control btn btn-danger" value="0" id="perdidas1"/>
+                        </div>
+                        
+                    </div> 
+                   <div class="row" style="margin-top:10px;margin-bottom:30px;">
+                       <div class="col-lg-2">
+                           <strong>Jugar 2 (O) : </strong>
+                    
+                    </div>
+                    <div class="col-lg-3">
+                            <input class="form-control" readonly value="" id="NameJugador2"/>
+                    </div>
+                    <div class="col-lg-1">
+                            <input type="button" class="form-control btn btn-success" value="0" id="ganadas2"/>
+                    </div>
+                    <div class="col-lg-1">
+                            <input type="button" class="form-control btn btn-danger" value="0" id="perdidas2"/>
+                    </div>
+                </div> 
+                  
+               </div>
+           </div>
+            <form name="tic" style="margin-left:40%;display:none;" id="Tablero"> 
+                    <input TYPE="button" NAME="sqr1" style="margin-bottom:5px;" class="tictac btn btn-default" value="     " onClick="if(document.tic.sqr1.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr1.value = ' X '; sqr1T = 1; turn = 1; vari(); check();} else if(document.tic.sqr1.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr1.value = ' X '; sqr1T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr1.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr1.value = ' O '; sqr1T = 1; turn = 1; vari(); player1Check()} drawCheck()"> 
+                    <input TYPE="button" NAME="sqr2" style="margin-bottom:5px;" class="tictac btn btn-default" value="     " onClick="if(document.tic.sqr2.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr2.value = ' X '; sqr2T = 1; turn = 1; vari(); check();} else if(document.tic.sqr2.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr2.value = ' X '; sqr2T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr2.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr2.value = ' O '; sqr2T = 1; turn = 1; vari(); player1Check()} drawCheck()"> 
+                    <input TYPE="button" NAME="sqr3" style="margin-bottom:5px;" class="tictac btn btn-default" value="     " onClick="if(document.tic.sqr3.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr3.value = ' X '; sqr3T = 1; turn = 1; vari(); check();} else if(document.tic.sqr3.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr3.value = ' X '; sqr3T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr3.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr3.value = ' O '; sqr3T = 1; turn = 1; vari(); player1Check()} drawCheck()">
+                    <br> 
+                    <input TYPE="button" NAME="sqr4" style="margin-bottom:5px;" class="tictac btn btn-default" value="     " onClick="if(document.tic.sqr4.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr4.value = ' X '; sqr4T = 1; turn = 1; vari(); check();} else if(document.tic.sqr4.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr4.value = ' X '; sqr4T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr4.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr4.value = ' O '; sqr4T = 1; turn = 1; vari(); player1Check()} drawCheck()"> 
+                    <input TYPE="button" NAME="sqr5" style="margin-bottom:5px;" class="tictac btn btn-default" value="     " onClick="if(document.tic.sqr5.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr5.value = ' X '; sqr5T = 1; turn = 1; vari(); check();} else if(document.tic.sqr5.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr5.value = ' X '; sqr5T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr5.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr5.value = ' O '; sqr5T = 1; turn = 1; vari(); player1Check()} drawCheck()"> 
+                    <input TYPE="button" NAME="sqr6" style="margin-bottom:5px;" class="tictac btn btn-default" value="     " onClick="if(document.tic.sqr6.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr6.value = ' X '; sqr6T = 1; turn = 1; vari(); check();} else if(document.tic.sqr6.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr6.value = ' X '; sqr6T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr6.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr6.value = ' O '; sqr6T = 1; turn = 1; vari(); player1Check()} drawCheck()">
+                    <br> 
+                    <input TYPE="button" NAME="sqr7" style="margin-bottom:5px;" class="tictac btn btn-default" value="     " onClick="if(document.tic.sqr7.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr7.value = ' X '; sqr7T = 1; turn = 1; vari(); check();} else if(document.tic.sqr7.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr7.value = ' X '; sqr7T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr7.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr7.value = ' O '; sqr7T = 1; turn = 1; vari(); player1Check()} drawCheck()"> 
+                    <input TYPE="button" NAME="sqr8" style="margin-bottom:5px;" class="tictac btn btn-default" value="     " onClick="if(document.tic.sqr8.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr8.value = ' X '; sqr8T = 1; turn = 1; vari(); check();} else if(document.tic.sqr8.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr8.value = ' X '; sqr8T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr8.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr8.value = ' O '; sqr8T = 1; turn = 1; vari(); player1Check()} drawCheck()"> 
+                    <input TYPE="button" NAME="sqr9" style="margin-bottom:5px;" class="tictac btn btn-default" value="     " onClick="if(document.tic.sqr9.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr9.value = ' X '; sqr9T = 1; turn = 1; vari(); check();} else if(document.tic.sqr9.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr9.value = ' X '; sqr9T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr9.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr9.value = ' O '; sqr9T = 1; turn = 1; vari(); player1Check()} drawCheck()"> 
+            </form> 
+    </div>
+
+        
+
+    
+    <script src="Js/jquery-3.3.1.js"></script>
+    <script src="Js/bootstrap.js"></script>
+    <script src="Js/vieja.js"></script>
+</body>
+</html>
